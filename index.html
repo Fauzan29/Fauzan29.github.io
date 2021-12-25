@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaFa Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="home">
+
+    <div class="container" id="header">
+
+        <nav class="menu" id="nav-bar">
+            <div class="menu-toggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="brand">
+                <h1>SaFa Store</h1>
+            </div>
+            <ul class="menu-list">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+
+            </ul>
+        </nav>
+
+        <header>
+            <div class="hero">
+                <img src="img/Safa2.png" alt="header-img" id="header-img">
+                <h2 class="heading">SaFa Store</h2>
+                <h2 class="sub-heading">Shoes Center</h2>
+            </div>
+            <div class="features feature-1">
+                <h4 class="price">IDR 500K</h4>
+                <p class="item">Nike Sneaker</p>
+            </div>
+            <div class="features feature-2">
+                <h4 class="price">IDR 450K</h4>
+                <p class="item">Adidas Sneaker</p>
+            </div>
+        </header>
+
+
+        <section class="services" id="services">
+            <div class="service">
+                <div class="icon"><img src="img/icons8-shoes-64 (1).png" alt=""></div>
+                <h3>Men Shoes</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur laudantium cupiditate totam
+                    voluptates? Ipsam, unde!</p>
+            </div>
+
+            <div class="service">
+                <div class="icon"><img src="img/icons8-women-shoes-100.png" alt=""></div>
+                <h3>Women Shoes</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur laudantium cupiditate totam
+                    voluptates? Ipsam, unde!</p>
+            </div>
+
+            <div class="service">
+                <div class="icon"><img src="img/icons8-baby-shoes-120.png" alt=""></div>
+                <h3>Kids Shoes</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur laudantium cupiditate totam
+                    voluptates? Ipsam, unde!</p>
+            </div>
+
+            <div class="service">
+                <div class="icon"><img src="img/icons8-shoes-64.png" alt=""></div>
+                <h3>Sport</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur laudantium cupiditate totam
+                    voluptates? Ipsam, unde!</p>
+            </div>
+
+        </section>
+
+        <section class="gallery" id="gallery">
+            <h2>Gallery</h2>
+
+            <img src="http://source.unsplash.com/random/201x201" alt="">
+            <img src="http://source.unsplash.com/random/202x202" alt="">
+            <img src="http://source.unsplash.com/random/203x203" alt="">
+            <img src="http://source.unsplash.com/random/204x204" alt="">
+            <img src="http://source.unsplash.com/random/205x205" alt="">
+            <img src="http://source.unsplash.com/random/206x206" alt="">
+            <img src="http://source.unsplash.com/random/207x207" alt="">
+            <img src="http://source.unsplash.com/random/208x208" alt="">
+            <img src="http://source.unsplash.com/random/209x209" alt="">
+            <img src="http://source.unsplash.com/random/2010x2010" alt="">
+
+        </section>
+
+        <section class="video">
+            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/BzSGOKJJ65Y"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </section>
+
+        <section class="contact">
+            <form action="https://www.freecodecamp.com/email-submit" id="form">
+                <input type="email" id="email" name="email" placeholder="masukkan email anda.." />
+                <input type="submit" id="submit" />
+            </form>
+        </section>
+    </div>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle input');
+
+        const nav = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', function () {
+            nav.classList.toggle('slide');
+        });
+    </script>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>

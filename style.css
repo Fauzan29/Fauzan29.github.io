@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+img{
+    width : 100%;
+}
+
+body{
+    background-color: #ddd;
+    font-size: 18px;
+    font-family : Arial, Helvetica, sans-serif;
+    margin: 50px;
+    min-height: 1500px;
+}
+
+.container{
+    display: grid;
+    gap: 10px;
+}
+
+/* Header */
+header{
+    display: grid;
+    grid-template-areas: 
+    'hero hero feature-1'
+    'hero hero feature-2';
+}
+
+.hero{
+    grid-area: hero;
+    min-height: 350px;
+    background-image: url(img/hero1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+}
+
+.hero > * {
+    display: none;
+}
+
+.features{
+    font-family: Oswald;
+    background-color: #000;
+    color: white;
+    display: grid;
+    /* justify-content: center;
+    align-content: center; */
+    place-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.feature-1 {
+    grid-area: feature-1;
+    background-image: url(img/shoes3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.feature-2 {
+    grid-area: feature-2;
+    background-image: url(img/shoes4.jpg) ;
+    background-size: cover;
+    background-position: center;
+}
+
+.features .price {
+    font-size: 3em;
+    font-weight: 300;
+}
+
+/* Navigation */
+.menu {
+    display: grid;
+    order: -1;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+}
+
+.menu .brand{
+    font-size: 1.3em;
+    color: #333;
+}
+
+.menu ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px, 1fr));
+    gap: 5px;
+}
+
+.menu a{
+    display: block;
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+/* Hamburger Menu */
+.menu-toggle{
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 9999;
+}
+
+.menu-toggle input{
+    display: block;
+    background-color: black;
+    position: absolute;
+    width: 38px;
+    height: 28px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0) ;
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    transform: scale(0);
+    opacity: 0;
+}
+
+/* Services */
+.services{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.service{
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.9);
+}
+
+.service .icon{
+    margin: 0 auto;
+    height: 70px;
+    width: 70px;
+    margin-bottom: 20px;
+}
+
+.service h3{
+    font-size: 1.5em;
+}
+
+.service p{
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    font-weight: 200;
+}
+
+/* Gallery */
+.gallery{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 4px;
+}
+
+.gallery h2{
+    /* grid-column-start: 1;
+    grid-column-end: -1; */
+    grid-column: 1/-1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+.video{
+    margin: 30px auto;
+}
+
+#nav-bar{
+    position: fixed;
+    top: 3px;
+    width: 92.5%;
+}
+
+.contact input{
+    display: block;
+    margin: 20px auto;
+}
+
+.contact input[type="email"]{
+    width: 50%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.contact input[type="submit"]{
+    margin: 5px auto;
+    width: 10%;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0;
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+/* Responsive breakpoint */
+@media (max-width: 1024px) {
+    .menu{
+        order: inherit;
+        grid-template-columns: 1fr;
+    }
+
+    .menu .brand{
+        display: none;
+    }
+
+    .hero > *{
+        display: block;
+        background-color: black;
+        color: white;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .hero img{
+        background-color: transparent;
+        position: relative;
+        right: 40px;
+        bottom: 130px;
+        width: 70px;
+        height: 70px;
+    }
+    .hero{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }    
+}
+
+
+@media (max-width: 768px) {
+    .menu{
+        order: -1;
+        justify-items: end;
+    }
+
+    .menu-toggle span{
+        background-color: black;
+    }
+    
+    .menu-toggle{
+        display: flex;
+    }
+    
+    .menu ul{
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: #000;
+        z-index: 1;
+        transform: translateY(-100%);
+        transition: all 1s;
+        opacity: 0;
+        width: 100%;
+    }
+
+    .menu ul.slide {
+        z-index: 1; 
+        opacity: 0.8;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-toggle span{
+        background-color: white;
+    }
+    
+    .menu-toggle{
+        top: 15px;
+    }
+
+    body{
+        margin: 15px;
+    }
+    header{
+        grid-template-areas: 
+        'hero'
+        'feature-1'
+        'feature-2';
+    }
+}
